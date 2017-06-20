@@ -1,0 +1,10 @@
+/build
+/.classpath
+/.gradle
+/.project
+/.settings
+/bin
+/.idea
+*.iml
+.DS_Store
+jenkins.war

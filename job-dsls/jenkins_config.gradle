@@ -1,0 +1,24 @@
+def emailRecipients = 'ci@example.com'
+
+def jobName = "jenkins-config"
+job(jobName) {
+    logRotator(-1, 20, -1, -1)
+    triggers {
+        githubPush()
+    }
+    scm {
+        git {
+            remote {
+                github('example/jenkins-config', 'https')
+                credentials('examplebuild')
+            }
+            branch("origin/master")
+        }
+    }
+    steps {
+        //noinspection GroovyAssignabilityCheck
+        gradle {
+            tasks 'updateJenkinsItems'
+        }
+    }
+}
