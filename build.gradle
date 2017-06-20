@@ -23,8 +23,8 @@ jenkins {
     servers {
         local {
             url  'http://localhost:8080'
-            username "$jenkinsConfigUser"
-            password "$jenkinsConfigPass"
+            // username "$jenkinsConfigUser"
+            // password "$jenkinsConfigPass"
         }
     }
 
